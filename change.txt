@@ -1,0 +1,22 @@
+// Installed cloudinary
+
+/// changed models photo to string
+
+//updated env with cloudinary
+
+//cloudinarymiddleware for config
+
+// added cloudinary concepts in home
+uploader destory
+
+// removed views images folders not use for apis
+
+//added jsonwebtoken 
+
+//removed session concepts multer
+
+//everythings works fine except putting data through forms instead works when sending through raw json form in postman
+
+//63f8b805e47e65d23abdbaf1
+
+//eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QxMjNAZ21haWwuY29tIiwidXNlcklkIjoiNjNmOGI4MDVlNDdlNjVkMjNhYmRiYWYxIiwiaWF0IjoxNjc3MjQ0NDcxLCJleHAiOjE2Nzc4NDkyNzF9.s7GeoBr02NXBz6PxvBXHrsY0mpIWFoXht7s8sZTfe3k
