@@ -20,3 +20,5 @@ uploader destory
 //63f8b805e47e65d23abdbaf1
 
 //eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QxMjNAZ21haWwuY29tIiwidXNlcklkIjoiNjNmOGI4MDVlNDdlNjVkMjNhYmRiYWYxIiwiaWF0IjoxNjc3MjQ0NDcxLCJleHAiOjE2Nzc4NDkyNzF9.s7GeoBr02NXBz6PxvBXHrsY0mpIWFoXht7s8sZTfe3k
+
+// deployed Successfully - temple-api.vercel.app
