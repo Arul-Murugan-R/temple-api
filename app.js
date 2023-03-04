@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path')
 const mongoose= require('mongoose')
 const bodyParser = require('body-parser')
+const multer = require('multer');
 require('dotenv').config()
 
 const app = express();
@@ -9,10 +10,18 @@ const URI = `mongodb+srv://${process.env.NAME}:${process.env.DPASS}@cluster0.1td
 const User = require('./models/user')
 const homeRoute = require('./routes/home')
 const authRoute = require('./routes/auth')
+const Storage = multer.diskStorage({})
+const fileFilter=(req,file,cb)=>{
+    if(file.mime==='image/png' || file.mime==='image/jpeg' || file.mime==='image/gif' || file.mime==='image/jpg'){
+        cb(null,true)
+    }
+    else{
+        cb(null,false)
+    }
+}
+app.use(multer({storage:Storage}).single('photo'))
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
-app.set('view engine', 'ejs');
-app.set('views','views');
 app.use((req,res,next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'POST,GET,PUT,PATCH,DELETE');
@@ -39,7 +48,7 @@ app.use((req,res,next)=>{
 })
 
 mongoose.connect(URI,()=>{
-    app.listen(process.env.PORT||7000,()=>{
+    app.listen(process.env.PORT||8000,()=>{
         console.log('listening on http://localhost:7000');
     })
 

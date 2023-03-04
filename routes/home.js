@@ -204,7 +204,7 @@ route.post('/delete/:proId',status,(req,res,next)=>{
     Product.findOne({user:new mongodb.ObjectId(req.userId),_id:new mongodb.ObjectId(req.params.proId)})
     .then((product)=>{
         if(!product){
-            return res.status(422).json({message:'Product Does Not Exist or Its Product Different User'})
+            return res.status(422).json({message:'Product Does Not Exist or Its Product belong to different User'})
         }
         Product.findByIdAndRemove(req.params.proId)
         .then(async (result)=>{
