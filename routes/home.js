@@ -64,7 +64,7 @@ route.use('/search',(req,res,next)=>{
     })
 })
 route.use('/product',status,(req,res,next)=>{
-    Product.find({user:new mongodb.ObjectId(req.user._id)})
+    Product.find({user:new mongodb.ObjectId(req.userId)})
     .then((product)=>{
         res.status(200).json({message:'Product List Found Successfully',products:product,i:1})
     })
