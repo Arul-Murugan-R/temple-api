@@ -63,13 +63,14 @@ route.use('/search',(req,res,next)=>{
         console.log(err)
     })
 })
-route.use('/product',status,(req,res,next)=>{
+route.get('/product',status,(req,res,next)=>{
     Product.find({user:new mongodb.ObjectId(req.userId)})
     .then((product)=>{
         res.status(200).json({message:'Product List Found Successfully',products:product,i:1})
     })
     .catch((err)=>{
         console.log(err)
+        res.send(401).json({message:err});
     })
 })
 

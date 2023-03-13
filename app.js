@@ -12,6 +12,7 @@ const homeRoute = require('./routes/home')
 const authRoute = require('./routes/auth')
 const Storage = multer.diskStorage({})
 const fileFilter=(req,file,cb)=>{
+    // console.log(file)
     if(file.mime==='image/png' || file.mime==='image/jpeg' || file.mime==='image/gif' || file.mime==='image/jpg'){
         cb(null,true)
     }
@@ -20,8 +21,7 @@ const fileFilter=(req,file,cb)=>{
     }
 }
 app.use(multer({storage:Storage}).single('photo'))
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json())
+app.use(bodyParser.json())
 app.use((req,res,next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'POST,GET,PUT,PATCH,DELETE');
@@ -49,7 +49,7 @@ app.use((req,res,next)=>{
 
 mongoose.connect(URI,()=>{
     app.listen(process.env.PORT||8000,()=>{
-        console.log('listening on http://localhost:7000');
+        console.log('listening on http://localhost:8000');
     })
 
 })
