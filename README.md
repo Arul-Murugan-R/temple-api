@@ -10,10 +10,11 @@
  ```
 
 # Technical Stuffs
-  - [ ] HTML
-  - [ ] CSS
   - [ ] Javascript
-  - [ ] ejs - Templating Engine used to produce Dyanamic HTML
   - [ ] NODE JS 
   - [ ] Express
   - [ ] MONGODB (Mongoose)
+  - [ ] JWT (JSON Web Tokens)
+
+# Hosted 
+- Vercel [https://temple-api.vercel.app/](https://temple-api.vercel.app/)
